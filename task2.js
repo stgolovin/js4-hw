@@ -6,7 +6,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const secretNumber = Math.floor(Math.random() * 100) + 1;  // Генерация случайного числа от 1 до 100
+const secretNumber = Math.floor(Math.random() * 100) + 1; 
 let attempts = 0;
 
 function startGame() {
@@ -16,7 +16,6 @@ function startGame() {
 
     if (userGuess === secretNumber) {
       console.log(`Поздравляем! Вы угадали число ${secretNumber} с ${attempts} попыток.`);
-      // Записываем протокол игры
       const logMessage = `Пользователь угадал число ${secretNumber} с ${attempts} попыток.\n`;
       fs.appendFile('game_log.txt', logMessage, (err) => {
         if (err) throw err;
